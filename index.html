@@ -15,8 +15,7 @@
     <h1>Welcome to My PWA</h1>
     <button id="install-button" style="display:none;">Install App</button>
 
-    
-    <button id="duress-button" href="tel:12345678">Press here if you are in duress</button>
+    <button id="duress-button">Press here if you are in duress</button>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
@@ -44,6 +43,35 @@
                 }
             });
         });
+
+
+        document.querySelector('#duress-button').addEventListener('click', () => {
+
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    let latitude = position.coords.latitude;
+                    let longitude = position.coords.longitude;
+                    let googleMapsLink = `https://maps.google.com/?q=${latitude},${longitude}`;
+                    
+                    // Open SMS app with message (manual send)
+                    let smsBody = `My location: ${googleMapsLink}`;
+                    window.location.href = `sms:?body=${encodeURIComponent(smsBody)}`;
+                    
+                    // Alternatively, use an SMS API like Twilio for automatic sending
+                    // sendSMSWithTwilio("+1234567890", smsBody);
+                }, error => {
+                    alert("Unable to retrieve location. Make sure GPS is enabled.");
+                });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+
+                // Wait a few seconds and then redirect to a phone number
+                setTimeout(function() {
+                    window.location.href = "tel:+0987654321"; // Change to desired phone number
+                }, 5000); // 5 seconds delay before redirecting
+                
+            });
     </script>
 
 </body>
