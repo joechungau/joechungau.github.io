@@ -48,7 +48,7 @@
         document.querySelector('#duress-button').addEventListener('click', () => {
             
             console.log('duress button clicked');
-            
+
             if ("geolocation" in navigator) {
                 navigator.geolocation.getCurrentPosition(position => {
                     let latitude = position.coords.latitude;
@@ -57,7 +57,7 @@
                     
                     // Open SMS app with message (manual send)
                     let smsBody = `My location: ${googleMapsLink}`;
-                    window.location.href = `sms:?body=${encodeURIComponent(smsBody)}`;
+                    window.location.href = `sms:0431706416?body=${encodeURIComponent(smsBody)}`;
                     
                     // Alternatively, use an SMS API like Twilio for automatic sending
                     // sendSMSWithTwilio("+1234567890", smsBody);
