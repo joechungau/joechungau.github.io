@@ -15,7 +15,7 @@
     <h1>Welcome to My PWA</h1>
     <button id="install-button" style="display:none;">Install App</button>
 
-    <button id="duress-button">Press here if you are in duress</button>
+    <button id="duress-button">Press here if you are in duress - 2</button>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
@@ -72,7 +72,7 @@
                 setTimeout(function() {
                     console.log('calling phone');
                     window.location.href = "tel:+0987654321"; // Change to desired phone number
-                }, 5000); // 5 seconds delay before redirecting
+                }, 1000); // 5 seconds delay before redirecting
                 
             });
     </script>
