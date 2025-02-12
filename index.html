@@ -46,7 +46,9 @@
 
 
         document.querySelector('#duress-button').addEventListener('click', () => {
-
+            
+            console.log('duress button clicked');
+            
             if ("geolocation" in navigator) {
                 navigator.geolocation.getCurrentPosition(position => {
                     let latitude = position.coords.latitude;
