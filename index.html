@@ -13,10 +13,9 @@
     <title>My PWA</title>
 </head>
 <body  class="d-flex justify-content-center align-items-center vh-100 bg-light">
-    <h1>Welcome to My PWA</h1>
     <button id="install-button" style="display:none;">Install App</button>
 
-    <button id="duress-button" class="btn btn-primary shadow-lg">Press here if you are in duress - 4</button>
+    <button id="duress-button" class="btn btn-primary shadow-lg"><img id="/icons/panicbutton.jpg"></img></button>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
