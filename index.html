@@ -12,10 +12,10 @@
     <link rel="manifest" href="manifest.json">
     <title>My PWA</title>
 </head>
-<body  class="d-flex justify-content-center align-items-center vh-100 bg-light">
+<body  class="d-flex justify-content-center align-items-center vh-100" style="background-color: #030038;">
     <button id="install-button" style="display:none;">Install App</button>
 
-    <button id="duress-button" class="btn btn-primary shadow-lg"><img src="/icons/panicbutton.jpg"></img></button>
+    <button id="duress-button"><img src="/icons/panic-button.png"></img></button>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
